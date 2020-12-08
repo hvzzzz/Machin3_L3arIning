@@ -18,7 +18,7 @@ grad = zeros(size(theta));
 %               derivatives of the cost w.r.t. each parameter in theta
 %
 % Note: grad should have the same dimensions as theta
-%
+%%
 j_1=y.*log(sigmoid(theta'*X(:,:)'))';
 j_2=(1-y).*log(1-sigmoid(theta'*X(:,:)'))';
 J=1/m*sum((-j_1-j_2));
@@ -27,10 +27,12 @@ grad_2=1/m*sum(((sigmoid(theta'*X(:,:)')'-y).*X(:,2)));
 grad_3=1/m*sum(((sigmoid(theta'*X(:,:)')'-y).*X(:,3)));
 
 grad=[grad_1 grad_2 grad_3]';
+%
 
-
-
-
+%j_1=y'*log(sigmoid(X*theta));
+%j_2=(1-y)'*log(1-sigmoid(X*theta));
+%J=1/m*sum((-j_1-j_2));
+%rad=1/m*X'*(sigmoid(X*theta)-y);
 
 
 
